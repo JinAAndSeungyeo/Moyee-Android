@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_background">@dimen/padding_middle</dimen>
+
+    <dimen name="padding_large">36dp</dimen>
+    <dimen name="padding_middle">24dp</dimen>
+    <dimen name="padding_small">16dp</dimen>
+    <dimen name="margin_large">36dp</dimen>
+    <dimen name="margin_middle">16dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+
+    <dimen name="size_clickable_minimum">48dp</dimen>
+
+    <dimen name="text_size1">24sp</dimen>
+    <dimen name="text_size2">20sp</dimen>
+    <dimen name="text_size3">18sp</dimen>
+    <dimen name="text_size4">14sp</dimen>
+    <dimen name="text_size5">12sp</dimen>
+</resources>
