@@ -11,6 +11,15 @@ import androidx.lifecycle.Observer;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class SingleLiveEvent<T> extends MutableLiveData<T> {
+
+    public SingleLiveEvent() {
+        super();
+    }
+
+    public SingleLiveEvent(T value) {
+        super(value);
+    }
+
     private static final String TAG = "SingleLiveEvent";
 
     private AtomicBoolean pending = new AtomicBoolean(false);

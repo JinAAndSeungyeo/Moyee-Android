@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.github.sseung416.moyee.view.register.RegisterViewModel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/choice_category"
+            android:textSize="@dimen/text_size4" />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_middle"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radio_kpop"
+                style="@style/CategoryRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/k_pop" />
+
+            <RadioButton
+                android:id="@+id/radio_anime"
+                style="@style/CategoryRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/animation" />
+
+            <RadioButton
+                android:id="@+id/radio_etc"
+                style="@style/CategoryRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/category_etc" />
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="@string/input_interested_keyword"
+            android:textSize="@dimen/text_size4" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/DefaultTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/DefaultTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/keyword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--    <TextView-->
+        <!--        android:text="@string/recent_add_keyword"-->
+        <!--        android:layout_marginTop="@dimen/margin_small"-->
+        <!--        android:layout_gravity="start"-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="wrap_content"/>-->
+
+        <!--    <com.google.android.material.chip.Chip-->
+        <!--        android:text="NCT"-->
+        <!--        app:chipCornerRadius="100dp"-->
+        <!--        app:chipStrokeColor="@color/white"-->
+        <!--        app:chipIcon="@drawable/ic_outline_add_24"-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="wrap_content"/>-->
+    </LinearLayout>
+</layout>

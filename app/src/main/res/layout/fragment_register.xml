@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.github.sseung416.moyee.view.register.RegisterViewModel" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".view.register.RegisterFragment">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:minWidth="@dimen/size_clickable_minimum"
+            android:minHeight="@dimen/size_clickable_minimum"
+            android:src="@drawable/ic_outline_arrow_back_24" />
+
+        <TextView
+            android:id="@+id/tv_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_back"
+            android:layout_marginStart="@dimen/margin_middle"
+            android:layout_marginTop="@dimen/margin_middle"
+            android:text="@string/register"
+            android:textSize="@dimen/text_size1"
+            android:textStyle="bold" />
+
+        <com.zhpan.indicator.IndicatorView
+            android:id="@+id/indicator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_register"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_large" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_middle"
+            android:layout_below="@+id/indicator"
+            android:layout_above="@+id/tv_error"
+            android:layout_centerHorizontal="true"
+            android:layout_marginHorizontal="@dimen/margin_middle" />
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/linearLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginHorizontal="@dimen/margin_middle"
+            android:backgroundTint="@color/main"
+            android:text="@string/next"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btn_next"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/margin_middle"
+            android:text="@{vm.errorMsg}"
+            android:textColor="@color/error"
+            tools:text="비밀번호를 입력해주세요." />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/margin_middle"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:text="이미 회원이신가요?" />
+
+            <TextView
+                android:id="@+id/tv_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_large"
+                android:clickable="true"
+                android:gravity="center"
+                android:minWidth="@dimen/size_clickable_minimum"
+                android:minHeight="@dimen/size_clickable_minimum"
+                android:text="@string/login" />
+        </LinearLayout>
+    </RelativeLayout>
+</layout>
