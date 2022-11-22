@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="end"
+    android:paddingVertical="4dp">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_bubble_sender"
+        android:enabled="false"
+        android:gravity="start|center_vertical"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:text="하이루~"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size5" />
+</LinearLayout>
