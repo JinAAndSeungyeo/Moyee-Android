@@ -1,25 +1,23 @@
 package com.github.sseung416.moyee.view.register;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
-import androidx.fragment.app.Fragment;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.github.sseung416.moyee.R;
 import com.github.sseung416.moyee.databinding.FragmentRegisterBinding;
+import com.github.sseung416.moyee.view.BindingFragment;
 import com.zhpan.indicator.enums.IndicatorSlideMode;
 import com.zhpan.indicator.enums.IndicatorStyle;
 
-public class RegisterFragment extends Fragment {
+public class RegisterFragment extends BindingFragment<FragmentRegisterBinding> {
 
     // todo(옮기기)
     public static final int ID = 0;
@@ -27,20 +25,17 @@ public class RegisterFragment extends Fragment {
     public static final int KEYWORD = 2;
 
     private RegisterViewModel viewModel;
-    private FragmentRegisterBinding binding;
 
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        binding = FragmentRegisterBinding.inflate(inflater);
-        viewModel = new ViewModelProvider(requireActivity()).get(RegisterViewModel.class);
-        binding.setVm(viewModel);
-        binding.setLifecycleOwner(getViewLifecycleOwner());
-        return binding.getRoot();
+    public RegisterFragment() {
+        super(R.layout.fragment_register);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        viewModel = new ViewModelProvider(requireActivity()).get(RegisterViewModel.class);
+        binding.setVm(viewModel);
 
         initViewPager2();
         observe();
@@ -81,12 +76,12 @@ public class RegisterFragment extends Fragment {
     }
 
     private void observe() {
-        LifecycleOwner owner = getViewLifecycleOwner();
+        final LifecycleOwner owner = getViewLifecycleOwner();
 
         viewModel.next.observe(owner, pos -> {
             switch (pos) {
                 case KEYWORD:
-                    Toast.makeText(requireContext(), "회원가입에 성공했습니다!", Toast.LENGTH_LONG);
+                    Toast.makeText(requireContext(), "회원가입에 성공했습니다!", Toast.LENGTH_LONG).show();
                     break;
                 case NAME:
                     binding.linearLayout.setVisibility(View.INVISIBLE);
