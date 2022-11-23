@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/background_bubble.xml" value="0.1365" />
+        <entry key="app/src/main/res/drawable/background_bubble_receiver.xml" value="0.1365" />
+        <entry key="app/src/main/res/drawable/background_bubble_sender.xml" value="0.1365" />
+        <entry key="app/src/main/res/drawable/background_notification.xml" value="0.1315" />
         <entry key="app/src/main/res/drawable/ic_baseline_check_24.xml" value="0.155" />
         <entry key="app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.155" />
         <entry key="app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.155" />
@@ -18,15 +22,25 @@
         <entry key="app/src/main/res/drawable/selector_category_radio.xml" value="0.1575" />
         <entry key="app/src/main/res/drawable/selector_category_radio_text_color.xml" value="0.1575" />
         <entry key="app/src/main/res/drawable/selector_password_toggle.xml" value="0.1575" />
+        <entry key="app/src/main/res/layout/activity_chat.xml" value="0.19739583333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.17753623188405798" />
-        <entry key="app/src/main/res/layout/fragment_register.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/fragment_chat.xml" value="0.24717832957110608" />
+        <entry key="app/src/main/res/layout/fragment_chat_list.xml" value="0.23007246376811594" />
+        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.23007246376811594" />
+        <entry key="app/src/main/res/layout/fragment_register.xml" value="0.19246673583984375" />
         <entry key="app/src/main/res/layout/fragment_register_item_category.xml" value="0.3550387596899225" />
         <entry key="app/src/main/res/layout/fragment_register_item_id.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_register_item_name.xml" value="0.37170263788968827" />
+        <entry key="app/src/main/res/layout/iem_chat.xml" value="0.21557971014492755" />
+        <entry key="app/src/main/res/layout/item_bubble_receiver.xml" value="0.5010309641946576" />
+        <entry key="app/src/main/res/layout/item_bubble_sender.xml" value="0.7917713773423347" />
+        <entry key="app/src/main/res/layout/item_chat.xml" value="0.4023967973702318" />
         <entry key="app/src/main/res/layout/item_register_category.xml" value="0.275365260027457" />
         <entry key="app/src/main/res/layout/item_register_id.xml" value="0.3103177607967164" />
         <entry key="app/src/main/res/layout/item_register_nickname.xml" value="0.21784420289855072" />
+        <entry key="app/src/main/res/layout/layout_circle_image_view.xml" value="0.21557971014492755" />
         <entry key="app/src/main/res/layout/view_default_input_box.xml" value="0.3782394409179688" />
+        <entry key="app/src/main/res/menu/toolbar_chat_list.xml" value="0.29375" />
       </map>
     </option>
   </component>

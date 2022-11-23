@@ -16,4 +16,7 @@
     <string name="category_etc">등등</string>
     <string name="keyword">키워드</string>
     <string name="recent_add_keyword">요즘 많이 추가하는 키워드는?</string>
+    <string name="photo">photo</string>
+    <string name="profile_image">profileImage</string>
+    <string name="search">search</string>
 </resources>

@@ -16,4 +16,7 @@
     <dimen name="text_size3">18sp</dimen>
     <dimen name="text_size4">14sp</dimen>
     <dimen name="text_size5">12sp</dimen>
+
+    <dimen name="bubble_radius">22dp</dimen>
+    <dimen name="bubble_padding">14dp</dimen>
 </resources>
