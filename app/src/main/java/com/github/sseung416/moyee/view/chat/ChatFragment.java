@@ -26,7 +26,7 @@ public class ChatFragment extends BindingFragment<FragmentChatBinding> {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        viewModel = new ViewModelProvider(requireActivity()).get(ChatViewModel.class);
+        viewModel = new ViewModelProvider(this).get(ChatViewModel.class);
         binding.setVm(viewModel);
 
         binding.rvChat.setAdapter(adapter);

@@ -4,8 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingHorizontal="@dimen/padding_background"
-    android:paddingTop="@dimen/padding_background"
     tools:context=".MainActivity">
 
     <androidx.fragment.app.FragmentContainerView

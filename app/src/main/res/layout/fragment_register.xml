@@ -47,11 +47,11 @@
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_middle"
-            android:layout_below="@+id/indicator"
             android:layout_above="@+id/tv_error"
+            android:layout_below="@+id/indicator"
             android:layout_centerHorizontal="true"
-            android:layout_marginHorizontal="@dimen/margin_middle" />
+            android:layout_marginHorizontal="@dimen/margin_middle"
+            android:layout_marginTop="@dimen/margin_middle" />
 
         <Button
             android:id="@+id/btn_next"
