@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.github.sseung416.moyee.databinding.ItemChatBinding;
 
-public class ChatListAdapter extends ListAdapter<Chat, ChatViewHolder> {
+public class ChatListAdapter extends ListAdapter<Chat, ChatListViewHolder> {
 
     protected ChatListAdapter() {
         super(DIFF_UTIL);
@@ -21,14 +21,14 @@ public class ChatListAdapter extends ListAdapter<Chat, ChatViewHolder> {
 
     @NonNull
     @Override
-    public ChatViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ChatListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         ItemChatBinding binding = ItemChatBinding.inflate(LayoutInflater.from(parent.getContext()));
         binding.getRoot().setLayoutParams(new RecyclerView.LayoutParams(MATCH_PARENT, WRAP_CONTENT));
-        return new ChatViewHolder(binding);
+        return new ChatListViewHolder(binding);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ChatViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ChatListViewHolder holder, int position) {
         holder.bind(getItem(position));
     }
 
