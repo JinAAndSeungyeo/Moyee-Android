@@ -6,61 +6,74 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.github.sseung416.moyee.R;
 import com.github.sseung416.moyee.databinding.ItemBubbleReceiverBinding;
 import com.github.sseung416.moyee.databinding.ItemBubbleSenderBinding;
 
-public class ChatAdapter extends ListAdapter<Bubble, RecyclerView.ViewHolder> {
+public class ChatAdapter extends ListAdapter<ChatListItem, ChatViewHolder> {
 
     public ChatAdapter() {
         super(DIFF_CALLBACK);
     }
 
-    @NonNull
-    @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        final LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        switch (viewType) {
-            case R.layout.item_bubble_sender:
-                return new SenderViewHolder(ItemBubbleSenderBinding.inflate(inflater, parent, false));
-            default:
-                return new ReceiverViewHolder(ItemBubbleReceiverBinding.inflate(inflater, parent, false));
-        }
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        String content = getItem(position).getContent();
-
-        if (holder instanceof SenderViewHolder) {
-            ((SenderViewHolder) holder).bind(content);
-        } else if (holder instanceof ReceiverViewHolder) {
-            ((ReceiverViewHolder) holder).bind(content);
-        }
-    }
-
     @Override
     public int getItemViewType(int position) {
-        switch (getItem(position).getId()) {
-            case Bubble.TYPE_SENDER:
-                return R.layout.item_bubble_sender;
-            case Bubble.TYPE_RECEIVER:
-                return R.layout.item_bubble_receiver;
-            default:
-                return super.getItemViewType(position);
+        final ChatListItem item = getItem(position);
+
+        if (item instanceof ChatListItem.Receiver) {
+            return R.layout.item_bubble_receiver;
+        } else if (item instanceof ChatListItem.Sender) {
+            return R.layout.item_bubble_sender;
+        }
+
+        return super.getItemViewType(position);
+    }
+
+    @NonNull
+    @Override
+    public ChatViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        final LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+
+        if (viewType == R.layout.item_bubble_sender) {
+            return new ChatViewHolder.SenderViewHolder(
+                    ItemBubbleSenderBinding.inflate(inflater, parent, false)
+            );
+        }
+
+        return new ChatViewHolder.ReceiverViewHolder(
+                ItemBubbleReceiverBinding.inflate(inflater, parent, false)
+        );
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull ChatViewHolder holder, int position) {
+        String content = getItem(position).bubble.getContent();
+
+        if (holder instanceof ChatViewHolder.ReceiverViewHolder) {
+            ((ChatViewHolder.ReceiverViewHolder) holder).bind(content);
+        } else if (holder instanceof ChatViewHolder.SenderViewHolder) {
+            ((ChatViewHolder.SenderViewHolder) holder).bind(content);
         }
     }
 
-    public static final DiffUtil.ItemCallback<Bubble> DIFF_CALLBACK = new DiffUtil.ItemCallback<Bubble>() {
+    public static final DiffUtil.ItemCallback<ChatListItem> DIFF_CALLBACK = new DiffUtil.ItemCallback<>() {
         @Override
-        public boolean areItemsTheSame(@NonNull Bubble oldItem, @NonNull Bubble newItem) {
-            return oldItem.getId() == newItem.getId();
+        public boolean areItemsTheSame(@NonNull ChatListItem oldItem, @NonNull ChatListItem newItem) {
+            Boolean isSameReceiverData = oldItem instanceof ChatListItem.Receiver
+                    && newItem instanceof ChatListItem.Receiver
+                    && oldItem.bubble.getId() == newItem.bubble.getId();
+
+            Boolean isSameSenderData = oldItem instanceof ChatListItem.Sender
+                    && newItem instanceof ChatListItem.Receiver
+                    && oldItem.bubble.getId() == newItem.bubble.getId();
+
+            return isSameReceiverData || isSameSenderData;
+
         }
 
         @Override
-        public boolean areContentsTheSame(@NonNull Bubble oldItem, @NonNull Bubble newItem) {
+        public boolean areContentsTheSame(@NonNull ChatListItem oldItem, @NonNull ChatListItem newItem) {
             return oldItem.equals(newItem);
         }
     };
