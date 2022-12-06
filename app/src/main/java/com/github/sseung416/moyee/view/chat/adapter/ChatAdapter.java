@@ -1,4 +1,4 @@
-package com.github.sseung416.moyee.view.chat;
+package com.github.sseung416.moyee.view.chat.adapter;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;

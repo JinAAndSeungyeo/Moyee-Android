@@ -10,8 +10,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.github.sseung416.moyee.R;
 import com.github.sseung416.moyee.databinding.FragmentChatBinding;
 import com.github.sseung416.moyee.view.BindingFragment;
-
-import java.util.LinkedList;
+import com.github.sseung416.moyee.view.chat.adapter.ChatAdapter;
 
 public class ChatFragment extends BindingFragment<FragmentChatBinding> {
 
@@ -40,11 +39,11 @@ public class ChatFragment extends BindingFragment<FragmentChatBinding> {
     }
 
     private void setDummy() {
-        adapter.submitList(new LinkedList<>() {{
-            add(new Bubble(Bubble.TYPE_SENDER, "야 ㅋdsfsdfsdkfhsdkjfjsdkfhsdkjfhjsdkfkjhsadkfdfasdjkfhhjkdsfjhsdfhjkfdskjjkdfsjkhfdhjkdfsjkhdfshjkdsfjhkdsjkfhsdjkfhkasdjfhsdajhfkhjkㅏㅁㄴㅇ롸ㅘㅇ러ㅏㄴ오ㅓㅏ라ㅗㅓㄴㅇ로ㅓㅏㅏㄴ오ㅓ라ㅗㅓㄴ아로ㅓㄴㅇㄹ"));
-            add(new Bubble(Bubble.TYPE_SENDER, "야 ㅋ"));
-            add(new Bubble(Bubble.TYPE_SENDER, "야 ㅋ"));
-            add(new Bubble(Bubble.TYPE_RECEIVER, "왜 ㅠㅠ"));
-        }});
+//        adapter.submitList(new LinkedList<>() {{
+//            add(new Bubble(Bubble.TYPE_SENDER, "야 ㅋdsfsdfsdkfhsdkjfjsdkfhsdkjfhjsdkfkjhsadkfdfasdjkfhhjkdsfjhsdfhjkfdskjjkdfsjkhfdhjkdfsjkhdfshjkdsfjhkdsjkfhsdjkfhkasdjfhsdajhfkhjkㅏㅁㄴㅇ롸ㅘㅇ러ㅏㄴ오ㅓㅏ라ㅗㅓㄴㅇ로ㅓㅏㅏㄴ오ㅓ라ㅗㅓㄴ아로ㅓㄴㅇㄹ"));
+//            add(new Bubble(Bubble.TYPE_SENDER, "야 ㅋ"));
+//            add(new Bubble(Bubble.TYPE_SENDER, "야 ㅋ"));
+//            add(new Bubble(Bubble.TYPE_RECEIVER, "왜 ㅠㅠ"));
+//        }});
     }
 }

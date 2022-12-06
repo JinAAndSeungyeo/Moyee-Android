@@ -1,4 +1,6 @@
-package com.github.sseung416.moyee.view.chat;
+package com.github.sseung416.moyee.view.chat.adapter;
+
+import com.github.sseung416.moyee.view.chat.Bubble;
 
 import java.util.Objects;
 
